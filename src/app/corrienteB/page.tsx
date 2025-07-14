@@ -1,8 +1,9 @@
+import CurrentChart from "@/components/CurrentChart";
 
 export default function Page() {
   return (
     <div>
-      <h1>Hello Page B</h1>
+      <CurrentChart />
     </div>
   );
 }

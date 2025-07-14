@@ -1,19 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface PhaseButtonsProps {
   onPhaseSelect?: (phase: 'A' | 'B' | 'C' | 'home') => void;
 }
 
 export default function PhaseButtons({ onPhaseSelect }: PhaseButtonsProps) {
-  const [selectedPhase, setSelectedPhase] = useState<'A' | 'B' | 'C' | 'home'>('A');
+  const pathname = usePathname();
 
-  const handlePhaseClick = (phase: 'A' | 'B' | 'C' | 'home') => {
-    setSelectedPhase(phase);
-    onPhaseSelect?.(phase);
+  const getSelectedPhase = (): 'A' | 'B' | 'C' | 'home' => {
+    if (pathname === '/corrienteA') return 'A';
+    if (pathname === '/corrienteB') return 'B';
+    if (pathname === '/corrienteC') return 'C';
+    return 'home';
   };
+
+  const selectedPhase = getSelectedPhase();
 
   const getButtonClass = (phase: 'A' | 'B' | 'C' | 'home') => {
     const baseClass = "px-6 py-3 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";

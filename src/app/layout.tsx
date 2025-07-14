@@ -32,7 +32,7 @@ export default function RootLayout({
 
           <h1 className="text-3xl font-bold mb-6 text-blue-800">Monitoreo de Corriente</h1>
           <PhaseButtons />
-          <div className="w-full max-w-4xl flex-1">
+          <div className="w-full max-w-4xl mt-6 flex-1">
             {children}
           </div>
         </main>
