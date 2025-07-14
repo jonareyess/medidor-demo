@@ -52,7 +52,6 @@ export default function CurrentChart() {
       }
     }, 1000); //actualizacion cada 1 segundo
 
-
     return () => clearInterval(interval);
   }, []);
 
