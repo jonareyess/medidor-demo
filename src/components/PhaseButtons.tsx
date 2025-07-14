@@ -4,18 +4,18 @@ import Link from "next/link";
 import { useState } from "react";
 
 interface PhaseButtonsProps {
-  onPhaseSelect?: (phase: 'A' | 'B' | 'C') => void;
+  onPhaseSelect?: (phase: 'A' | 'B' | 'C' | 'home') => void;
 }
 
 export default function PhaseButtons({ onPhaseSelect }: PhaseButtonsProps) {
-  const [selectedPhase, setSelectedPhase] = useState<'A' | 'B' | 'C'>('A');
+  const [selectedPhase, setSelectedPhase] = useState<'A' | 'B' | 'C' | 'home'>('A');
 
-  const handlePhaseClick = (phase: 'A' | 'B' | 'C') => {
+  const handlePhaseClick = (phase: 'A' | 'B' | 'C' | 'home') => {
     setSelectedPhase(phase);
     onPhaseSelect?.(phase);
   };
 
-  const getButtonClass = (phase: 'A' | 'B' | 'C') => {
+  const getButtonClass = (phase: 'A' | 'B' | 'C' | 'home') => {
     const baseClass = "px-6 py-3 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
     const isSelected = selectedPhase === phase;
 
@@ -28,6 +28,10 @@ export default function PhaseButtons({ onPhaseSelect }: PhaseButtonsProps) {
 
   return (
     <div className="flex gap-4 justify-center mb-6">
+      <Link
+        href='/'
+        className={getButtonClass('home')}
+      > Todos </Link>
       <Link
         href='/corrienteA'
         className={getButtonClass('A')}

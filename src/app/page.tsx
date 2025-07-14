@@ -3,6 +3,10 @@ import PhaseButtons from "@/components/PhaseButtons"
 
 export default function Home() {
   return (
-    <h1>wena wena</h1>
+    <div className="flex flex-col gap-4">
+      <CurrentChart />
+      <CurrentChart />
+      <CurrentChart />
+    </div>
   )
 }
