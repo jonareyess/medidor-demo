@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="flex min-h-screen flex-col items-center justify-start p-4 bg-gray-300">
+        <main className="flex min-h-screen flex-col items-center justify-start p-4 bg-gray-100">
 
           <h1 className="text-3xl font-bold mb-6 text-blue-800">Monitoreo de Corriente</h1>
           <PhaseButtons />
